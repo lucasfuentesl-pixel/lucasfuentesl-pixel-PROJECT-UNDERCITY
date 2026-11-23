@@ -228,6 +228,32 @@ button { font: inherit; }
 .touch-actions button span { font: 800 24px 'Barlow Condensed', sans-serif; }
 .touch-actions button small { font: 700 9px 'Manrope', sans-serif; letter-spacing: 1.5px; }
 
+.npc-tag { color: #dde6dc; padding: 3px 6px; border: 1px solid rgba(255,255,255,.18); border-radius: 3px; background: rgba(8,12,13,.82); font: 700 8px 'Manrope', sans-serif; white-space: nowrap; }
+.mission-panel, .economy-panel, .map-panel, .game-menu { position: absolute; z-index: 7; border: 1px solid rgba(225,234,225,.14); border-radius: 5px; color: #edf2ec; background: rgba(8,12,13,.78); backdrop-filter: blur(10px); }
+.mission-panel { left: 22px; top: 82px; width: 238px; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 14px; }
+.mission-panel small { grid-column: 1 / -1; color: #98a39a; font-size: 9px; letter-spacing: 1.5px; }
+.mission-panel strong { font: 700 17px 'Barlow Condensed', sans-serif; }
+.mission-panel span { color: #d3af54; font: 700 13px 'Manrope', sans-serif; }
+.economy-panel { right: 22px; top: 82px; display: grid; gap: 2px; min-width: 112px; padding: 10px 12px; text-align: right; }
+.economy-panel small { color: #98a39a; font-size: 8px; letter-spacing: 1.5px; }
+.economy-panel strong { color: #d7bc70; font: 700 20px 'Barlow Condensed', sans-serif; }
+.map-panel { right: 22px; bottom: 22px; width: 180px; height: 138px; overflow: hidden; }
+.map-grid { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 49.5%, rgba(220,230,220,.12) 50%, transparent 50.5%), linear-gradient(0deg, transparent 49.5%, rgba(220,230,220,.12) 50%, transparent 50.5%), #171d1d; background-size: 32px 32px; }
+.map-grid i, .map-grid b { position: absolute; width: 7px; height: 7px; transform: translate(-50%, -50%) rotate(45deg); background: #edf2ec; }
+.map-grid b { width: 9px; height: 9px; border: 2px solid #d1ad55; background: transparent; }
+.map-panel svg { position: absolute; right: 10px; bottom: 12px; }
+.map-panel span { position: absolute; left: 10px; bottom: 10px; font-size: 8px; letter-spacing: 1px; }
+.game-menu { z-index: 12; right: 22px; top: 70px; width: 320px; padding: 24px; }
+.game-menu h2 { margin: 6px 0 18px; font: 700 25px 'Barlow Condensed', sans-serif; }
+.game-menu .modal-close { position: absolute; right: 12px; top: 12px; width: 32px; height: 32px; border: 0; display: grid; place-items: center; color: #dfe6dd; background: transparent; }
+.garage-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
+.garage-row div { display: flex; align-items: center; gap: 9px; }
+.garage-row strong { color: #77b96d; font-size: 10px; }
+.camera-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+.camera-options button { height: 42px; border: 1px solid rgba(255,255,255,.12); border-radius: 3px; color: #9ea8a0; background: #151b1c; font-size: 9px; }
+.camera-options button.active { color: #edf2ec; border-color: #d8b85c; }
+.achievement-count { margin-top: 14px; color: #adb7ae; font-size: 10px; }
+
 @media (max-width: 700px), (pointer: coarse) {
   .touch-controls { display: flex; }
   .hud-status { bottom: 148px; }

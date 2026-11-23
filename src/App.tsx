@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import * as THREE from 'three'
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, CarFront, CircleHelp, Gamepad2, Settings, Volume2, VolumeX, X } from 'lucide-react'
+import Undercity from './game/Undercity'
 
 type Screen = 'menu' | 'game'
 
@@ -327,28 +328,7 @@ function TouchControls({ mode }: { mode: 'foot' | 'vehicle' }) {
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>('menu')
-  const [mode, setMode] = useState<'foot' | 'vehicle'>('foot')
-  const [distance, setDistance] = useState(99)
 
   if (screen === 'menu') return <Menu onStart={() => setScreen('game')} />
-
-  return (
-    <main className="game-shell">
-      <Canvas shadows dpr={[1, 1.5]} gl={{ antialias: true }}>
-        <GameWorld onModeChange={setMode} onDistanceChange={setDistance} />
-      </Canvas>
-      <header className="game-hud">
-        <div className="hud-brand">UC<span>04</span></div>
-        <button className="hud-menu" onClick={() => setScreen('menu')}>MENU</button>
-      </header>
-      <TouchControls mode={mode} />
-      {mode === 'foot' && distance < 4.5 && (
-        <div className="action-prompt"><kbd>E</kbd><span>Entrar al vehículo</span></div>
-      )}
-      {mode === 'vehicle' && (
-        <div className="action-prompt"><CarFront size={18} /><span>WASD para conducir · Q para salir</span></div>
-      )}
-      <div className="hud-status"><span>{mode === 'foot' ? 'A PIE' : 'VEHÍCULO'}</span><b>04:32</b></div>
-    </main>
-  )
+  return <Undercity />
 }
